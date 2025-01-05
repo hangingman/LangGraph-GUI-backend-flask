@@ -225,7 +225,7 @@ def run_workflow_as_server():
         exec(tool_code, globals())
 
     ollama_base_url = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
-    ollama_model_name = os.environ.get("OLLAMA_MODEL_NAME", "gemma:2b")
+    ollama_model_name = os.environ.get("OLLAMA_MODEL_NAME", "gemma2:2b")
     llm = Ollama(model=ollama_model_name, base_url=ollama_base_url, format="json", temperature=0)
 
     RunWorkFlow(node_map, llm)
