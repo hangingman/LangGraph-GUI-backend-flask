@@ -13,6 +13,9 @@ RUN pip install -r requirements.txt
 # Expose port
 EXPOSE 5000
 
+ENV OLLAMA_BASE_URL=http://localhost:11434
+ENV OLLAMA_MODEL_NAME=gemma:2b
+
 # Change to the src/workspace directory and run the server
 WORKDIR /app/src/workspace
 CMD ["python", "../server.py"]
